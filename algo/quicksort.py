@@ -3,16 +3,16 @@
 def partition(arr: list[int], left: int, right: int):
     # Take the last element as the pivot
     pivot = arr[right]
-    i = left - 1
+    i = left
 
     for j in range(left, right):
         # If current element is smaller than the pivot
         if arr[j] < pivot:
-            i = i + 1
             arr[i], arr[j] = arr[j], arr[i]  # Swap them
+            i = i + 1
 
     # Swap with the last element iterated
-    pos = i + 1
+    pos = i
     arr[right], arr[pos] = arr[pos], arr[right]
 
     return pos
